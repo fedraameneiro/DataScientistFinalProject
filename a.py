@@ -25,35 +25,7 @@ def main():
     # Mostrar el resultado de la predicción
     st.write("Resultado de la Predicción:", resultado_prediccion)
 
-def predecir_con_modelo(blood_glucose_level, bmi, age, hba1c_level):
-    # URL del modelo en GitHub
-    url_modelo = "https://raw.githubusercontent.com/tu_usuario/tu_repositorio/ruta/a/tu/modelo/modelo.pkl"
 
-    # Realizar una solicitud HTTP para obtener el modelo
-    response = requests.get(url_modelo)
-
-    # Verificar si la solicitud fue exitosa
-    if response.status_code == 200:
-        # Cargar el modelo desde el contenido de la respuesta
-        modelo = cargar_modelo_desde_bytes(response.content)
-
-        # Realizar la predicción
-        resultado_prediccion = modelo.predict([blood_glucose_level, bmi, age, hba1c_level])
-
-        # Devolver el resultado de la predicción
-        return resultado_prediccion[0]
-
-    else:
-        st.error(f"No se pudo obtener el modelo. Código de estado: {response.status_code}")
-        return None
-
-def cargar_modelo_desde_bytes(modelo_bytes):
-    # Esta función debe ser implementada según la forma en que guardaste tu modelo.
-    # Puedes usar pickle, joblib, o cualquier otro formato de serialización.
-    # Aquí, como ejemplo, se asume que se utiliza pickle.
-    import pickle
-    modelo = pickle.loads(modelo_bytes)
-    return modelo
 
 
     main()
