@@ -26,7 +26,7 @@ def main():
     # Mostrar el resultado de la predicción
     st.write("Resultado de la Predicción:", resultado_prediccion)
 
-def predecir_con_modelo(valor_glucosa, valor_bmi, valor_edad, valorHbA1c):
+def predecir_con_modelo(blood_glucose_level, bmi, age, hba1c_level):
     # URL del modelo en GitHub
     url_modelo = "https://raw.githubusercontent.com/tu_usuario/tu_repositorio/ruta/a/tu/modelo/modelo.pkl"
 
@@ -39,7 +39,7 @@ def predecir_con_modelo(valor_glucosa, valor_bmi, valor_edad, valorHbA1c):
         modelo = cargar_modelo_desde_bytes(response.content)
 
         # Realizar la predicción
-        resultado_prediccion = modelo.predict([valor_glucosa, valor_bmi, valor_edad, valorHbA1c])
+        resultado_prediccion = modelo.predict([blood_glucose_level, bmi, age, hba1c_level])
 
         # Devolver el resultado de la predicción
         return resultado_prediccion[0]
