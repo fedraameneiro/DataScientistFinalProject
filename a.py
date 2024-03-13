@@ -21,7 +21,7 @@ def main():
     st.write("Datos del Paciente:", paciente)
 
     # Llamar al modelo de machine learning
-    resultado_prediccion = predecir_con_modelo(valor_glucosa, valor_bmi, valor_edad, valorHbA1c)
+   # resultado_prediccion = predecir_con_modelo(valor_glucosa, valor_bmi, valor_edad, valorHbA1c)
 
     # Mostrar el resultado de la predicción
     st.write("Resultado de la Predicción:", resultado_prediccion)
@@ -56,5 +56,5 @@ def cargar_modelo_desde_bytes(modelo_bytes):
     modelo = pickle.loads(modelo_bytes)
     return modelo
 
-if __name__ == "__main__":
+
     main()
