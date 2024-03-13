@@ -23,8 +23,7 @@ def main():
    # resultado_prediccion = predecir_con_modelo(valor_glucosa, valor_bmi, valor_edad, valorHbA1c)
 
     # Mostrar el resultado de la predicción
-    st.write("Resultado de la Predicción:", resultado_prediccion)
-
+    #st.write("Resultado de la Predicción:", resultado_prediccion)
 
 
 
