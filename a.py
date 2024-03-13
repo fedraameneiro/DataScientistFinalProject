@@ -2,9 +2,6 @@ import streamlit as st
 import requests
 import pandas as pd
 
-
-
-def main():
     st.title("Formulario de Datos del Paciente")
 
     # Recopilar datos del usuario
@@ -18,13 +15,3 @@ def main():
 
     # Mostrar los datos del paciente en la interfaz de usuario
     st.write("Datos del Paciente:", paciente)
-
-    # Llamar al modelo de machine learning
-   # resultado_prediccion = predecir_con_modelo(valor_glucosa, valor_bmi, valor_edad, valorHbA1c)
-
-    # Mostrar el resultado de la predicción
-    #st.write("Resultado de la Predicción:", resultado_prediccion)
-
-
-
-    main()
