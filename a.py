@@ -2,7 +2,6 @@ import streamlit as st
 import requests
 import pandas as pd
 
-Modelo, Preprocesador=load('Proyecto_final_Ciencia_de_Datos_FedraAmeneiro_api.ipynb')
 
 
 def main():
