@@ -39,7 +39,7 @@ def cargar_modelo_desde_bytes(modelo_bytes):
 #llamamos a nuestro modelo de predicción    
 def predecir_con_modelo(valor_glucosa, valor_bmi, valor_edad, valorHbA1c):
     # URL del modelo en GitHub
-    url_modelo_entrenamiento = "https://raw.githubusercontent.com/tu_usuario/tu_repositorio/ruta/a/tu/modelo/modelo.pkl"
+    url_modelo_entrenamiento = "https://raw.githubusercontent.com/fedraameneiro/DataScientistFinalProject/main/Proyecto_final_Ciencia_de_Datos_FedraAmeneiro_api_backend.ipynb"
 
     # Realizar una solicitud HTTP para entrenar el modelo
     #response 1, ok. response 0 not ok
