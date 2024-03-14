@@ -34,7 +34,9 @@ def cargar_modelo_desde_bytes(modelo_bytes):
     import pickle
     modelo = pickle.loads(modelo_bytes)
     return modelo
+   
 
+# Ahora 'modelo_cargado' contiene tu modelo de machine learning cargado desde el archivo
 
 #llamamos a nuestro modelo de predicción    
 def predecir_con_modelo(valor_glucosa, valor_bmi, valor_edad, valorHbA1c):
@@ -46,31 +48,31 @@ def predecir_con_modelo(valor_glucosa, valor_bmi, valor_edad, valorHbA1c):
     response = requests.get(url_modelo_entrenamiento)
 
     # Verificar si la solicitud fue exitosa
-    if response.status_code == 200:
+    #if response.status_code == 200:
         # Cargar el modelo desde el contenido de la respuesta
-        modelo = cargar_modelo_desde_bytes(response.content)
+    modelo = cargar_modelo_desde_bytes(response.content)
 
         # Realizar la predicción
        
-        paciente= np.array([[valor_edad, valor_bmi, valorHbA1c, valor_glucosa]])
-        scaler = StandardScaler()
-        paciente = scaler.fit_transform(paciente)
-        nuevos_datos_scaled = scaler.transform(paciente)
+    paciente= np.array([[valor_edad, valor_bmi, valorHbA1c, valor_glucosa]])
+    scaler = StandardScaler()
+    paciente = scaler.fit_transform(paciente)
+    nuevos_datos_scaled = scaler.transform(paciente)
 
-        resultado_prediccion = modelo.predict(nuevos_datos_scaled)
+    resultado_prediccion = modelo.predict(nuevos_datos_scaled)
 
         # Convierte las probabilidades en predicciones binarias usando un umbral (por ejemplo, 0.5)
-        prediccion_binaria =  (resultado_prediccion >= 0.5).astype(int)
+    prediccion_binaria =  (resultado_prediccion >= 0.5).astype(int)
         # Mapea las predicciones binarias a etiquetas más descriptivas
-        resultado = "Diabetes" if prediccion_binaria[0] == 1 else "No Diabetes"
+    resultado = "Diabetes" if prediccion_binaria[0] == 1 else "No Diabetes"
        
         # Devolver el resultado de la predicción
-        return resultado
+    return resultado
 
-    else:
-        st.error(f"No se pudo obtener el modelo. Código de estado: {response.status_code}")
-        return None
+    #else:
+        #st.error(f"No se pudo obtener el modelo. Código de estado: {response.status_code}")
+        #return None
 
 
-
-main()
+if __name__ == "__main__":
+    main()
