@@ -6,9 +6,8 @@ import numpy as np
 import sklearn
 from sklearn.preprocessing import StandardScaler
 
-!pip3 intall -r requirements.txt
-!pip3 install --upgrade pip
-modelo=load_model('modelo.h5')
+
+#modelo=load_model('modelo.h5')
 
 def main():
     st.title("Formulario de Datos del Paciente")
@@ -34,12 +33,12 @@ def main():
     paciente = scaler.fit_transform(paciente)
     nuevos_datos_scaled = scaler.transform(paciente)
 
-    resultado_prediccion = modelo.predict(nuevos_datos_scaled)
-    st.write("Resultado de la predicción:", resultado_prediccion)
-    prediccion_binaria=(resultado_prediccion >=0.5).astype(int)
-    st.write("El paciente es:", prediccion_binaria[0])
-    resultado="Diabetico"if prediccion_binaria[0] == 1 else "No Diabetico"
-    st.write("El paciente es:", resultado)
+   # resultado_prediccion = modelo.predict(nuevos_datos_scaled)
+    #st.write("Resultado de la predicción:", resultado_prediccion)
+   # prediccion_binaria=(resultado_prediccion >=0.5).astype(int)
+   # st.write("El paciente es:", prediccion_binaria[0])
+   # resultado="Diabetico"if prediccion_binaria[0] == 1 else "No Diabetico"
+   # st.write("El paciente es:", resultado)
 
 
 main()
