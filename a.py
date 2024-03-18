@@ -5,15 +5,15 @@ from keras.models import load_model
 import numpy as np
 import sklearn
 from sklearn.preprocessing import StandardScaler
-import tensorflow as tf
 
-from joblib import load
+
+
 
 
 #no olvidarse de cargar todos los requirements cargados en requirements.txt pip intall -r requirements.txt
 #modelo=pickle.load(open('modelo.sav','rb'))
 # Cargar el modelo desde el archivo .pkl
-modelo=load('modelo.joblib')
+modelo=load_model('modelo.h5')
 
 def main():
     st.title("Formulario de Datos del Paciente")
