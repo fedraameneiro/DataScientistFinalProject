@@ -7,7 +7,7 @@ import sklearn
 from sklearn.preprocessing import StandardScaler
 
 #modelo=load_model('modelo.h5')
-pip intall -r requirements.txt
+
 def main():
     st.title("Formulario de Datos del Paciente")
     # Recopilar datos del usuario
