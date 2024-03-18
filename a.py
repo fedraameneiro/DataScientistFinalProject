@@ -6,14 +6,7 @@ import numpy as np
 import sklearn
 from sklearn.preprocessing import StandardScaler
 
-
-
-
-
-#no olvidarse de cargar todos los requirements cargados en requirements.txt pip intall -r requirements.txt
-#modelo=pickle.load(open('modelo.sav','rb'))
-# Cargar el modelo desde el archivo .pkl
-modelo=load_model('modelo.h5')
+#modelo=load_model('modelo.h5')
 
 def main():
     st.title("Formulario de Datos del Paciente")
@@ -28,7 +21,7 @@ def main():
     valor_glucosa=159
 
   
-        # Crear un array llamado 'paciente' con los datos recopilados
+    # Crear un array llamado 'paciente' con los datos recopilados
     paciente = [valor_edad, valor_bmi, valorHbA1c, valor_glucosa]
 
     # Mostrar los datos del paciente en la interfaz de usuario
@@ -39,7 +32,8 @@ def main():
     paciente = scaler.fit_transform(paciente)
     nuevos_datos_scaled = scaler.transform(paciente)
 
-    resultado_prediccion = modelo.predict(nuevos_datos_scaled)
+    #resultado_prediccion = modelo.predict(nuevos_datos_scaled)
+    resultado_prediccion=1
     st.write("Resultado de la predicción:", resultado_prediccion)
     prediccion_binaria=(resultado_prediccion >=0.5).astype(int)
     st.write("El paciente es:", prediccion_binaria[0])
