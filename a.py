@@ -7,6 +7,7 @@ import sklearn
 from sklearn.preprocessing import StandardScaler
 
 !pip3 intall -r requirements.txt
+!pip3 install --upgrade pip
 modelo=load_model('modelo.h5')
 
 def main():
