@@ -30,8 +30,6 @@ def main():
     prediccion_binaria=(resultado_prediccion >=0.5).astype(int)
     resultado="Diabetico" if prediccion_binaria[0]==1 else "No Diabetico"
     st.write("El paciente es:", resultado)
-    
-
 main()
 
   
