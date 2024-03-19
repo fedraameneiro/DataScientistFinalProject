@@ -16,3 +16,10 @@ Queremos saber cuáles son las variables que más nos afectan a la hora de sufri
 Qué variables son las preponderantes en el riesgo de tener diabetes?
 Qué probabilidad tiene un paciente de sufrir diabetes teniendo en cuenta las variables menos fuertes?
 Finalmente analizaremos un algoritmo de Machine learning que mejor nos prediga esta condición.
+
+En este repositorio podemos encontrar:
+  - Proyecto final Ciencia de Datos_FedraAmeneiro.ipynb: notebook en Colab con el analisis de los datos utilizados, la comparación entre el uso de varios algoritmos de machine learning y el entrenamiento del elegido por su mejor performance.
+  - Proyecto final Ciencia de Datos_FedraAmeneiro_api_backend.ipynb: notebook en Colab con el entrenamiento del algoritmo exclusivamente para su uso en la api
+  - a.py: aplicacion codificada en python para la interacción con el usuario. Este puede meter los datos del paciente y le devuelve si el paciente es o no diabetico según el modelo entrenado.
+  - requirements.txt: librerías requeridas
+  - modelo.h5: modelo descargado para su uso en la api
